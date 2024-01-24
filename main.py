@@ -22,7 +22,7 @@ background_image_night = pygame.transform.scale(original_background_image_night,
 original_background_image_wall = pygame.image.load("assets\pixel-brick-wall-seamless-pattern-600nw-1798409881.webp")
 background_image_wall = pygame.transform.scale(original_background_image_wall, (WIDTH, HEIGHT // 2 + 25))
 
-# Initialize Pygame
+
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Theme Park Manager")
 
@@ -108,7 +108,7 @@ class ControlPanel:
         self.button_color2 = button_color2
         self.button_hover_color = button_hover_color
 
-        # Rectangles for buttons
+      
         self.add_button_rect = pygame.Rect(WIDTH // 2 + 10, 5, 50, 50)
         self.subtract_button_rect = pygame.Rect(WIDTH // 2 + 210, 5, 50, 50)
         self.price_display_rect = pygame.Rect(WIDTH // 2 + 10, 200, 150, 50)
@@ -161,7 +161,6 @@ class ControlPanel:
 
         self.draw_background()
 
-        #drawing text
         text = self.font.render(f"Day {self.theme_park.day_counting}", True, self.text_color)
         screen.blit(text, (10, 10))
 
@@ -174,7 +173,7 @@ class ControlPanel:
         text = self.font.render(f"Money: {self.theme_park.money}", True, self.text_color)
         screen.blit(text, (10, 200))
 
-        #add button
+        
         pygame.draw.rect(screen, self.button_color, self.add_button_rect)
         text = self.font.render("+", True, self.text_color)
         screen.blit(text, (WIDTH // 2 + 30, 15))
@@ -197,7 +196,7 @@ class ControlPanel:
         text = self.font.render("Next Day", True, self.text_color)
         screen.blit(text, (WIDTH - 200, HEIGHT // 2 - 40))
 
-        # Check if the mouse is over the buttons for hover effect
+      
         if self.add_button_rect.collidepoint(pygame.mouse.get_pos()):
             pygame.draw.rect(screen, self.button_hover_color, self.add_button_rect)
         if self.subtract_button_rect.collidepoint(pygame.mouse.get_pos()):
@@ -212,9 +211,9 @@ class ControlPanel:
             screen.blit(text, (WIDTH // 2 + 20, 80))
 def main():
     theme_park = ThemePark()
-    font = pygame.font.Font(None, 36)  # You can customize the font and size
-    text_color = BLACK  # Black text color
-    button_color = GRAY  # Gray button color
+    font = pygame.font.Font(None, 36)  
+    text_color = BLACK  
+    button_color = GRAY 
     button_color2 = GREEN
     button_hover_color = (150, 150, 150)  
 
